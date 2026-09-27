@@ -3,96 +3,321 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio | Ingeniero Civil</title>
+  <meta name="description" content="Portfolio profesional de Nestor, ingeniero civil.">
+  <title>Nestor | Ingeniero Civil</title>
+
   <style>
-    * { box-sizing: border-box; }
+    :root {
+      --azul-oscuro: #102a43;
+      --azul: #1f5f8b;
+      --azul-claro: #eaf3f8;
+      --amarillo: #f0a500;
+      --blanco: #ffffff;
+      --gris-fondo: #f4f6f8;
+      --gris-texto: #52606d;
+      --sombra: 0 6px 18px rgba(16, 42, 67, 0.10);
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      color: #172033;
-      background: #f4f6f8;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--azul-oscuro);
+      background: var(--gris-fondo);
       line-height: 1.6;
     }
+
+    /* Cabecera y navegación */
     header {
-      background: #102a43;
-      color: white;
-      padding: 80px 20px;
-      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--azul-oscuro);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
     }
-    header h1 { margin: 0 0 12px; font-size: 42px; }
-    header p { margin: 0 auto 24px; max-width: 650px; font-size: 19px; }
-    .boton {
+
+    .barra-navegacion {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      color: var(--blanco);
+      text-decoration: none;
+      font-size: 1.25rem;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .boton-menu {
+      color: var(--blanco);
+      text-decoration: none;
+      padding: 9px 13px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 5px;
+      font-size: 0.92rem;
+      transition: background 0.25s, color 0.25s;
+    }
+
+    .boton-menu:hover,
+    .boton-menu:focus {
+      background: var(--amarillo);
+      color: var(--azul-oscuro);
+      outline: none;
+    }
+
+    /* Portada */
+    .portada {
+      min-height: 520px;
+      padding: 110px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--blanco);
+      background: linear-gradient(135deg, #102a43, #1f5f8b);
+    }
+
+    .portada-contenido {
+      max-width: 800px;
+    }
+
+    .portada h1 {
+      margin: 0 0 15px;
+      font-size: clamp(2.2rem, 6vw, 4rem);
+    }
+
+    .portada p {
+      margin: 0 auto 28px;
+      max-width: 680px;
+      font-size: 1.2rem;
+      color: #e6eef3;
+    }
+
+    .boton-principal {
       display: inline-block;
-      padding: 12px 22px;
-      background: #f0a500;
-      color: #172033;
+      padding: 13px 24px;
+      background: var(--amarillo);
+      color: var(--azul-oscuro);
       text-decoration: none;
       border-radius: 6px;
       font-weight: bold;
     }
-    main { max-width: 1050px; margin: auto; padding: 50px 20px; }
-    section { margin-bottom: 55px; }
-    h2 { color: #102a43; font-size: 30px; }
+
+    .boton-principal:hover {
+      background: #ffc44d;
+    }
+
+    /* Contenido */
+    main {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    section {
+      scroll-margin-top: 85px;
+      margin-bottom: 70px;
+    }
+
+    .titulo-seccion {
+      margin-bottom: 25px;
+      color: var(--azul-oscuro);
+      font-size: 2rem;
+      border-left: 5px solid var(--amarillo);
+      padding-left: 13px;
+    }
+
+    .texto-introduccion {
+      max-width: 800px;
+      color: var(--gris-texto);
+    }
+
     .tarjetas {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
     }
+
     .tarjeta {
-      background: white;
-      padding: 22px;
+      padding: 24px;
+      background: var(--blanco);
+      border-radius: 9px;
+      box-shadow: var(--sombra);
+      border-top: 4px solid var(--azul);
+    }
+
+    .tarjeta h3 {
+      margin-top: 0;
+      color: var(--azul);
+    }
+
+    .tarjeta p,
+    .tarjeta li {
+      color: var(--gris-texto);
+    }
+
+    .tarjeta ul {
+      padding-left: 20px;
+    }
+
+    .contacto {
+      padding: 30px;
+      background: var(--azul-claro);
       border-radius: 10px;
-      box-shadow: 0 3px 12px rgba(0,0,0,.08);
     }
+
+    .enlace-contacto {
+      color: var(--azul);
+      font-weight: bold;
+    }
+
     footer {
-      padding: 25px;
+      padding: 25px 20px;
       text-align: center;
-      background: #102a43;
-      color: white;
+      color: var(--blanco);
+      background: var(--azul-oscuro);
     }
-    @media (max-width: 600px) {
-      header h1 { font-size: 32px; }
+
+    /* Adaptación para móviles */
+    @media (max-width: 700px) {
+      .barra-navegacion {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .menu {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .boton-menu {
+        font-size: 0.85rem;
+        padding: 8px 10px;
+      }
+
+      .portada {
+        min-height: 450px;
+        padding: 80px 20px;
+      }
     }
   </style>
 </head>
+
 <body>
   <header>
-    <h1>Tu Nombre</h1>
-    <p>Ingeniero civil especializado en la planificación, supervisión y gestión de proyectos de construcción e infraestructura.</p>
-    <a class="boton" href="#contacto">Contactar</a>
+    <nav class="barra-navegacion" aria-label="Navegación principal">
+      <a class="logo" href="#inicio">Nestor | Ingeniería Civil</a>
+
+      <div class="menu">
+        <a class="boton-menu" href="#inicio">Inicio</a>
+        <a class="boton-menu" href="#experiencia">Experiencia profesional</a>
+        <a class="boton-menu" href="#proyectos">Proyectos</a>
+        <a class="boton-menu" href="#delineacion">Delineación</a>
+        <a class="boton-menu" href="#contacto">Contacto</a>
+      </div>
+    </nav>
   </header>
 
-  <main>
-    <section id="sobre-mi">
-      <h2>Sobre mí</h2>
-      <p>Soy ingeniero civil con experiencia en el desarrollo y seguimiento de proyectos técnicos. En esta web presento mi trayectoria profesional, especialidades y proyectos destacados.</p>
-    </section>
+  <section id="inicio" class="portada">
+    <div class="portada-contenido">
+      <h1>Nestor</h1>
+      <p>Ingeniero civil especializado en el desarrollo, supervisión y representación técnica de proyectos de construcción e infraestructura.</p>
+      <a class="boton-principal" href="#proyectos">Ver mis proyectos</a>
+    </div>
+  </section>
 
-    <section id="especialidades">
-      <h2>Especialidades</h2>
+  <main>
+    <section id="experiencia">
+      <h2 class="titulo-seccion">Experiencia profesional</h2>
+      <p class="texto-introduccion">En esta sección podrás presentar tu trayectoria profesional, los puestos desempeñados y las principales responsabilidades asumidas en cada empresa o proyecto.</p>
+
       <div class="tarjetas">
-        <div class="tarjeta"><h3>Gestión de obra</h3><p>Planificación, coordinación y seguimiento de trabajos.</p></div>
-        <div class="tarjeta"><h3>Infraestructuras</h3><p>Participación en proyectos de carreteras y obras civiles.</p></div>
-        <div class="tarjeta"><h3>Control técnico</h3><p>Control de calidad, costes, plazos y documentación.</p></div>
+        <article class="tarjeta">
+          <h3>Ingeniero civil</h3>
+          <p><strong>Empresa:</strong> Nombre de la empresa</p>
+          <p><strong>Periodo:</strong> 2022 - Actualidad</p>
+          <p>Supervisión de obras, coordinación de equipos, control de avances y revisión de documentación técnica.</p>
+        </article>
+
+        <article class="tarjeta">
+          <h3>Puesto anterior</h3>
+          <p><strong>Empresa:</strong> Nombre de la empresa</p>
+          <p><strong>Periodo:</strong> 2019 - 2022</p>
+          <p>Describe aquí tus funciones, responsabilidades y logros profesionales más importantes.</p>
+        </article>
       </div>
     </section>
 
     <section id="proyectos">
-      <h2>Proyectos destacados</h2>
+      <h2 class="titulo-seccion">Proyectos</h2>
+      <p class="texto-introduccion">Una selección de los proyectos de ingeniería civil en los que has participado.</p>
+
       <div class="tarjetas">
-        <div class="tarjeta"><h3>Proyecto 1</h3><p>Describe aquí el tipo de proyecto, ubicación, fechas y tus responsabilidades.</p></div>
-        <div class="tarjeta"><h3>Proyecto 2</h3><p>Añade una breve descripción y los principales datos técnicos.</p></div>
+        <article class="tarjeta">
+          <h3>Proyecto de infraestructura</h3>
+          <p><strong>Ubicación:</strong> Ciudad, país</p>
+          <p><strong>Periodo:</strong> 2023</p>
+          <p>Incluye aquí una descripción del proyecto, sus dimensiones y tu participación profesional.</p>
+        </article>
+
+        <article class="tarjeta">
+          <h3>Proyecto de construcción</h3>
+          <p><strong>Ubicación:</strong> Ciudad, país</p>
+          <p><strong>Periodo:</strong> 2021</p>
+          <p>Añade los datos técnicos, el alcance de la obra y las tareas que realizaste.</p>
+        </article>
       </div>
     </section>
 
-    <section id="contacto">
-      <h2>Contacto</h2>
-      <p>Email: <a href="mailto:tuemail@ejemplo.com">tuemail@ejemplo.com</a></p>
-      <p>LinkedIn: <a href="#">Añade aquí tu perfil</a></p>
+    <section id="delineacion">
+      <h2 class="titulo-seccion">Delineación</h2>
+      <p class="texto-introduccion">Presenta aquí tus conocimientos y experiencia en delineación, elaboración de planos y representación gráfica de proyectos.</p>
+
+      <div class="tarjetas">
+        <article class="tarjeta">
+          <h3>Planos técnicos</h3>
+          <p>Elaboración y modificación de planos de obra, detalles constructivos y documentación gráfica.</p>
+        </article>
+
+        <article class="tarjeta">
+          <h3>Herramientas digitales</h3>
+          <ul>
+            <li>AutoCAD</li>
+            <li>Revit</li>
+            <li>Civil 3D</li>
+            <li>Otros programas que utilices</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="contacto" class="contacto">
+      <h2 class="titulo-seccion">Contacto</h2>
+      <p>Si quieres contactar conmigo, puedes hacerlo a través de los siguientes medios:</p>
+      <p>Correo electrónico: <a class="enlace-contacto" href="mailto:tuemail@ejemplo.com">tuemail@ejemplo.com</a></p>
+      <p>LinkedIn: <a class="enlace-contacto" href="#">Añade aquí tu perfil de LinkedIn</a></p>
     </section>
   </main>
 
-  <footer>© 2025 Tu Nombre · Portfolio de Ingeniería Civil</footer>
+  <footer>
+    © 2025 Nestor · Portfolio de Ingeniería Civil
+  </footer>
 </body>
 </html>
-
