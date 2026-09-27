@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portfolio profesional de Nestor, ingeniero civil.">
-  <title>Nestor | Ingeniero Civil</title>
+  <title>NÉSTOR ANDREU GARCÍA | Ingeniero Civil. Especialista en Ingeniería Hidráulica</title>
 
   <style>
     :root {
@@ -82,43 +82,146 @@
       outline: none;
     }
 
-    /* Portada */
-    .portada {
-      min-height: 520px;
-      padding: 110px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: var(--blanco);
-      background: linear-gradient(135deg, #102a43, #1f5f8b);
-    }
+    /* Cabecero principal renovado */
+.portada {
+  position: relative;
+  min-height: 620px;
+  padding: 120px 20px 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--blanco);
+  overflow: hidden;
+  background:
+    linear-gradient(115deg, rgba(8, 28, 45, 0.94), rgba(31, 95, 139, 0.78)),
+    url('img/XXXX.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
-    .portada-contenido {
-      max-width: 800px;
-    }
 
-    .portada h1 {
-      margin: 0 0 15px;
-      font-size: clamp(2.2rem, 6vw, 4rem);
-    }
 
-    .portada p {
-      margin: 0 auto 28px;
-      max-width: 680px;
-      font-size: 1.2rem;
-      color: #e6eef3;
-    }
 
-    .boton-principal {
-      display: inline-block;
-      padding: 13px 24px;
-      background: var(--amarillo);
-      color: var(--azul-oscuro);
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-    }
+/*
+.portada::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.16;
+  background-image: linear-gradient(rgba(255,255,255,0.18) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,0.18) 1px, transparent 1px);
+  background-size: 45px 45px;
+  pointer-events: none;
+}
+*/
+
+.portada-contenido {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+}
+
+.etiqueta-portada {
+  display: inline-block;
+  margin-bottom: 22px;
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 30px;
+  color: #ffe09a;
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.portada h1 {
+  max-width: 900px;
+  margin: 0 auto 18px;
+  font-size: clamp(2.5rem, 7vw, 5.8rem);
+  line-height: 1.05;
+  letter-spacing: 1px;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+}
+
+.portada h1 span {
+  color: var(--amarillo);
+}
+
+.portada-subtitulo {
+  margin: 0 auto 25px;
+  font-size: clamp(1.05rem, 2vw, 1.4rem);
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.portada p {
+  max-width: 720px;
+  margin: 0 auto 32px;
+  font-size: 1.08rem;
+  line-height: 1.8;
+  color: #e6eef3;
+}
+
+.botones-portada {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.boton-principal,
+.boton-secundario {
+  display: inline-block;
+  padding: 14px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.25s, background 0.25s, color 0.25s;
+}
+
+.boton-principal {
+  background: var(--amarillo);
+  color: var(--azul-oscuro);
+}
+
+.boton-secundario {
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  color: var(--blanco);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.boton-principal:hover,
+.boton-secundario:hover {
+  transform: translateY(-3px);
+}
+
+.boton-principal:hover {
+  background: #ffc44d;
+}
+
+.boton-secundario:hover {
+  background: var(--blanco);
+  color: var(--azul-oscuro);
+}
+
+@media (max-width: 700px) {
+  .portada {
+    min-height: 570px;
+    padding: 90px 20px 70px;
+  }
+
+  .portada h1 {
+    font-size: clamp(2.5rem, 13vw, 4rem);
+  }
+
+  .portada p {
+    font-size: 1rem;
+  }
+}
+
 
     .boton-principal:hover {
       background: #ffc44d;
@@ -149,11 +252,123 @@
       color: var(--gris-texto);
     }
 
-    .tarjetas {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 20px;
-    }
+    #experiencia .timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 35px auto 0;
+  padding-left: 34px;
+}
+
+#experiencia .timeline::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--amarillo);
+}
+
+#experiencia .experiencia-item {
+  position: relative;
+  margin-bottom: 28px;
+  padding: 26px 30px;
+  background: var(--blanco);
+  border-radius: 10px;
+  border-top: 4px solid var(--azul);
+  box-shadow: var(--sombra);
+}
+
+#experiencia .experiencia-item::before {
+  content: "";
+  position: absolute;
+  left: -34px;
+  top: 30px;
+  width: 15px;
+  height: 15px;
+  background: var(--amarillo);
+  border: 3px solid var(--azul-oscuro);
+  border-radius: 50%;
+}
+
+#experiencia .experiencia-item h3 {
+  margin: 0 0 4px;
+  color: var(--azul-oscuro);
+  font-size: 1.35rem;
+}
+
+#experiencia .experiencia-item h4 {
+  margin: 0 0 8px;
+  color: var(--azul);
+  font-size: 1.05rem;
+}
+
+#experiencia .datos-experiencia {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-bottom: 16px;
+  color: var(--gris-texto);
+  font-size: 0.95rem;
+}
+
+#experiencia .experiencia-item ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+#experiencia .experiencia-item li {
+  margin-bottom: 7px;
+  color: var(--gris-texto);
+}
+
+@media (max-width: 700px) {
+  #experiencia .timeline {
+    padding-left: 25px;
+  }
+
+  #experiencia .timeline::before {
+    left: 7px;
+  }
+
+  #experiencia .experiencia-item {
+    padding: 22px 20px;
+  }
+
+  #experiencia .experiencia-item::before {
+    left: -27px;
+  }
+}
+
+#proyectos .tarjetas {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+#proyectos .tarjeta {
+  width: 100%;
+  min-height: 260px;
+  padding: 36px;
+  color: white;
+  background-size: cover;
+  background-position: center;
+  border-top: 4px solid var(--amarillo);
+  border-radius: 12px;
+  box-shadow: var(--sombra);
+}
+
+#proyectos .tarjeta-proyecto-1 {
+  background-image:
+    linear-gradient(rgba(16, 42, 67, 0.78), rgba(16, 42, 67, 0.78)),
+    url('https://grupopacsa.es/wp-content/uploads/2024/08/15-Roturas-Imagen-Apoyo-e1725609116279.jpg');
+}
+
+#proyectos .tarjeta-proyecto-2 {
+  background-image:
+    linear-gradient(rgba(16, 42, 67, 0.78), rgba(16, 42, 67, 0.78)),
+    url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkxtOQu5mqAzsmn_vhP3Anb9YlWH758eYC6H6qxp4x1w&s=10');
+}
 
     .tarjeta {
       padding: 24px;
@@ -217,13 +432,48 @@
         padding: 80px 20px;
       }
     }
+
+/* Logos de las empresas en la experiencia profesional */
+#experiencia .experiencia-item {
+  position: relative;
+  padding-right: 180px;
+}
+
+#experiencia .logo-empresa {
+  position: absolute;
+  top: 22px;
+  right: 25px;
+  width: 120px;
+  height: 70px;
+  object-fit: contain;
+  object-position: center;
+  background: var(--blanco);
+  border-radius: 6px;
+  padding: 8px;
+}
+
+@media (max-width: 700px) {
+  #experiencia .experiencia-item {
+    padding-right: 20px;
+    padding-top: 105px;
+  }
+
+  #experiencia .logo-empresa {
+    top: 20px;
+    right: 20px;
+    width: 105px;
+    height: 60px;
+  }
+}
+
+
   </style>
 </head>
 
 <body>
   <header>
     <nav class="barra-navegacion" aria-label="Navegación principal">
-      <a class="logo" href="#inicio">Nestor | Ingeniería Civil</a>
+      <a class="logo" href="#inicio">NÉSTOR ANDREU GARCÍA | Ingeniero Civil</a>
 
       <div class="menu">
         <a class="boton-menu" href="#inicio">Inicio</a>
@@ -236,48 +486,193 @@
   </header>
 
   <section id="inicio" class="portada">
-    <div class="portada-contenido">
-      <h1>Nestor</h1>
-      <p>Ingeniero civil especializado en el desarrollo, supervisión y representación técnica de proyectos de construcción e infraestructura.</p>
+  <div class="portada-contenido">
+    <span class="etiqueta-portada">Ingeniería civil · Ingeniería hidráulica</span>
+
+    <h1>NÉSTOR ANDREU GARCÍA</h1>
+
+    <p class="portada-subtitulo">
+      Civil Project Engineer especializado en infraestructuras hidráulicas
+    </p>
+
+    <p>
+      Desarrollo de proyectos de abastecimiento, saneamiento y drenaje,
+      planes directores y modelización hidráulica e hidrológica.
+    </p>
+
+    <div class="botones-portada">
       <a class="boton-principal" href="#proyectos">Ver mis proyectos</a>
+      <a class="boton-secundario" href="#contacto">Contactar</a>
     </div>
-  </section>
+  </div>
+</section>
 
   <main>
     <section id="experiencia">
-      <h2 class="titulo-seccion">Experiencia profesional</h2>
-      <p class="texto-introduccion">En esta sección podrás presentar tu trayectoria profesional, los puestos desempeñados y las principales responsabilidades asumidas en cada empresa o proyecto.</p>
+  <h2 class="titulo-seccion">Experiencia profesional</h2>
+  <p class="texto-introduccion">
+      
+    Ingeniero civil de proyectos con experiencia en España e Irlanda, especializado en el desarrollo 
+    y coordinación de proyectos de abastecimiento, saneamiento, drenaje e infraestructuras hidráulicas. 
+    Mi trayectoria combina el diseño y la modelización hidráulica e hidrológica con la elaboración de planes directores de abastecimiento y saneamiento, 
+    la elaboración de cálculos, planos y documentación técnica, la supervisión de obras y la coordinación con equipos multidisciplinares, 
+    administraciones públicas, clientes y contratistas. También cuento con experiencia en carreteras, urbanización, rehabilitación de edificios y 
+    soluciones de drenaje sostenible, utilizando herramientas como Civil 3D, EPANET, SWMM, HEC-RAS, HEC-HMS, GIS y AutoCAD.
+      
+  </p>
 
-      <div class="tarjetas">
-        <article class="tarjeta">
-          <h3>Ingeniero civil</h3>
-          <p><strong>Empresa:</strong> Nombre de la empresa</p>
-          <p><strong>Periodo:</strong> 2022 - Actualidad</p>
-          <p>Supervisión de obras, coordinación de equipos, control de avances y revisión de documentación técnica.</p>
-        </article>
-
-        <article class="tarjeta">
-          <h3>Puesto anterior</h3>
-          <p><strong>Empresa:</strong> Nombre de la empresa</p>
-          <p><strong>Periodo:</strong> 2019 - 2022</p>
-          <p>Describe aquí tus funciones, responsabilidades y logros profesionales más importantes.</p>
-        </article>
+  <div class="timeline">
+    <article class="experiencia-item">
+      <img class="logo-empresa" src="img/veolia.png" alt="Logo de Veolia">
+      <h3>Veolia — Aquatec (AGBAR)</h3>
+      <h4>Civil Project Engineer</h4>
+      <div class="datos-experiencia">
+        <span><strong>Periodo:</strong> noviembre de 2025 - actualidad</span>
+        <span><strong>Ubicación:</strong> Provincia de Murcia, España</span>
       </div>
-    </section>
+      <ul>
+        <li>Prestación de asistencia técnica a diferentes Administraciones Públicas.</li>
+        <li>Desarrollo de planes locales de abastecimiento y saneamiento, incluyendo el análisis y planificación de infraestructuras municipales de agua y aguas residuales.</li>
+        <li>Preparación y desarrollo de proyectos constructivos de abastecimiento, saneamiento, drenaje e infraestructuras hidráulicas.</li>
+        <li>Modelización y análisis hidráulico e hidrológico para el diseño y evaluación de redes de agua y drenaje.</li>
+        <li>Elaboración de documentación técnica, cálculos, planos, mediciones y entregables de proyecto.</li>
+        <li>Coordinación con equipos multidisciplinares y representantes de la Administración Pública.</li>
+        <li>Uso de Autodesk Civil 3D, EPANET y SWMM.</li>
+      </ul>
+    </article>
+
+    <article class="experiencia-item">
+      <img class="logo-empresa" src="img/typsa.png" alt="Logo de TYPSA">
+      <h3>TYPSA Group — Exceltic Consulting</h3>
+      <h4>Civil Project Engineer · Drainage Project Engineer</h4>
+      <div class="datos-experiencia">
+        <span><strong>Periodo:</strong> octubre de 2023 - noviembre de 2025</span>
+        <span><strong>Ubicación:</strong> Valencia, España</span>
+      </div>
+      <ul>
+        <li>Desarrollo de proyectos internacionales de abastecimiento y drenaje.</li>
+        <li>Diseño de redes de drenaje por gravedad, redes de saneamiento, conducciones de distribución de agua y trazados viarios.</li>
+        <li>Desarrollo de modelos hidrológicos con GIS, HEC-RAS y HEC-HMS para análisis lluvia-escorrentía y diseño de drenaje.</li>
+        <li>Modelización y diseño hidráulico con Autodesk Civil 3D, Storm and Sanitary Analysis, SWMM y EPANET.</li>
+        <li>Coordinación con equipos técnicos para la entrega de diseños y planos de ingeniería.</li>
+        <li>Aplicación de estándares, normativa y especificaciones de proyectos de Arabia Saudí.</li>
+      </ul>
+    </article>
+
+    <article class="experiencia-item">
+      <img class="logo-empresa" src="img/renovak.png" alt="Logo de Grupo Renovak Building Company">
+      <h3>Grupo Renovak Building Company</h3>
+      <h4>Site Engineer</h4>
+      <div class="datos-experiencia">
+        <span><strong>Periodo:</strong> febrero de 2022 - octubre de 2023</span>
+        <span><strong>Ubicación:</strong> Alicante, España</span>
+      </div>
+      <ul>
+        <li>Supervisión de obras de rehabilitación de edificios residenciales.</li>
+        <li>Transmisión de la información de planos y especificaciones a encargados, operarios y subcontratistas.</li>
+        <li>Control de materiales, trabajos ejecutados y cumplimiento de las especificaciones.</li>
+        <li>Seguimiento de los métodos constructivos, costes y planificación de obra.</li>
+        <li>Participación en reuniones semanales con la dirección facultativa y los clientes.</li>
+        <li>Elaboración de informes sobre planificación, costes y reclamaciones del contratista.</li>
+        <li>Supervisión del cumplimiento de la normativa de seguridad y salud.</li>
+      </ul>
+    </article>
+
+    <article class="experiencia-item">
+      <img class="logo-empresa" src="img/aymed.png" alt="Logo de AYMED Proyectos, Obras y Servicios">
+      <h3>AYMED Proyectos, Obras y Servicios S.L.</h3>
+      <h4>Civil Project Engineer</h4>
+      <div class="datos-experiencia">
+        <span><strong>Periodo:</strong> marzo de 2020 - febrero de 2022</span>
+        <span><strong>Ubicación:</strong> Alicante, España</span>
+      </div>
+      <ul>
+        <li>Trabajo en consultoría especializada en abastecimiento, saneamiento y servicios medioambientales.</li>
+        <li>Apoyo a empresas privadas en procesos de licitación pública mediante herramientas GIS.</li>
+        <li>Redacción de planes directores de abastecimiento y saneamiento con EPANET y SWMM.</li>
+        <li>Apoyo a Ayuntamientos en el análisis de la rentabilidad y el diseño de infraestructuras hidráulicas.</li>
+        <li>Planificación de un proyecto para un nuevo astillero en Palma de Mallorca.</li>
+      </ul>
+    </article>
+
+    <article class="experiencia-item">
+      <img class="logo-empresa" src="img/dbfl.png" alt="Logo de DBFL Consulting Engineers">
+      <h3>DBFL Consulting Engineers Ltd.</h3>
+      <h4>Graduate Civil Engineer</h4>
+      <div class="datos-experiencia">
+        <span><strong>Periodo:</strong> febrero de 2019 - diciembre de 2019</span>
+        <span><strong>Ubicación:</strong> Dublín, Irlanda</span>
+      </div>
+      <ul>
+        <li>Participación en proyectos residenciales, industriales y comerciales.</li>
+        <li>Diseño de carreteras, abastecimiento y drenaje.</li>
+        <li>Diseño de sistemas urbanos de drenaje sostenible (SUDS) y soluciones frente al riesgo de inundación.</li>
+        <li>Diseño de tráfico, inspecciones de obra y coordinación con clientes, contratistas y arquitectos.</li>
+      </ul>
+    </article>
+
+    <article class="experiencia-item">
+      <img class="logo-empresa" src="img/waterman-moylan.png" alt="Logo de Waterman Moylan Consulting Engineers">
+      <h3>Waterman Moylan Consulting Engineers</h3>
+      <h4>Junior Civil Engineer Technician</h4>
+      <div class="datos-experiencia">
+        <span><strong>Periodo:</strong> enero de 2018 - febrero de 2019</span>
+        <span><strong>Ubicación:</strong> Dublín, Irlanda</span>
+      </div>
+      <ul>
+        <li>Participación en proyectos residenciales, industriales y comerciales.</li>
+        <li>Diseño de carreteras, abastecimiento y drenaje.</li>
+        <li>Desarrollo de soluciones SUDS y frente al riesgo de inundación.</li>
+        <li>Preparación de paquetes de planos técnicos.</li>
+      </ul>
+    </article>
+
+    <article class="experiencia-item">
+      <h3>Vectalia</h3>
+      <img class="logo-empresa" src="img/vectalia.png" alt="Logo de Vectalia">
+      <h4>Internship Engineer</h4>
+      <div class="datos-experiencia">
+        <span><strong>Periodo:</strong> noviembre de 2016 - mayo de 2017</span>
+        <span><strong>Ubicación:</strong> Alicante, España</span>
+      </div>
+      <ul>
+        <li>Apoyo al ingeniero responsable en proyectos de licitación.</li>
+        <li>Preparación de paquetes de planos con AutoCAD.</li>
+        <li>Redacción de informes y gestión de inspecciones de obra.</li>
+      </ul>
+    </article>
+
+    <article class="experiencia-item">
+      <img class="logo-empresa" src="img/procays.png" alt="Logo de Procays Gestión Territorial">
+      <h3>Procays Gestión Territorial</h3>
+      <h4>Internship Engineer</h4>
+      <div class="datos-experiencia">
+        <span><strong>Periodo:</strong> abril de 2016 - julio de 2016</span>
+        <span><strong>Ubicación:</strong> Alicante, España</span>
+      </div>
+      <ul>
+        <li>Redacción de informes y registros técnicos.</li>
+        <li>Preparación de planos con AutoCAD.</li>
+        <li>Gestión de inspecciones de obra.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
 
     <section id="proyectos">
       <h2 class="titulo-seccion">Proyectos</h2>
       <p class="texto-introduccion">Una selección de los proyectos de ingeniería civil en los que has participado.</p>
 
       <div class="tarjetas">
-        <article class="tarjeta">
+        <article class="tarjeta tarjeta-proyecto-1">
           <h3>Proyecto de infraestructura</h3>
           <p><strong>Ubicación:</strong> Ciudad, país</p>
           <p><strong>Periodo:</strong> 2023</p>
           <p>Incluye aquí una descripción del proyecto, sus dimensiones y tu participación profesional.</p>
         </article>
 
-        <article class="tarjeta">
+        <article class="tarjeta tarjeta-proyecto-2">
           <h3>Proyecto de construcción</h3>
           <p><strong>Ubicación:</strong> Ciudad, país</p>
           <p><strong>Periodo:</strong> 2021</p>
